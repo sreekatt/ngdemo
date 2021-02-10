@@ -1,0 +1,18 @@
+body {
+  padding: 30px;
+}
+
+table {
+  width: 100%;
+}
+
+.mat-column-userId {
+  flex: 0 0 10%;
+}
+.mat-column-id {
+  flex: 0 0 10%;
+}
+
+.mat-column-title {
+  flex: 0 0 30%;
+}

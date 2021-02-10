@@ -1,0 +1,16 @@
+body {
+  padding: 30px;
+}
+
+.map-container {
+  margin: 0px;
+}
+
+.map-frame {
+  border: 2px solid black;
+  height: 420px;
+}
+
+#iss-map {
+  height: 100%;
+}

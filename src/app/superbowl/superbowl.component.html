@@ -1,0 +1,71 @@
+
+<body>
+
+  <div>
+    <div class="grid-container">
+      <h1 class="mat-h1">Superbowl Winners</h1>
+      <mat-grid-list cols="1" rowHeight="2:1" gutterSize="10px">
+          <mat-grid-tile>
+            <mat-card class="dashboard-card">
+              <canvas id="myChart1">
+                  {{ chart1 }}
+              </canvas>
+            </mat-card>
+          </mat-grid-tile>
+      </mat-grid-list>
+    </div>
+  </div>
+
+  <br><br>
+
+  <div>
+    <h1>Superbowl stats table</h1>
+    <div class="mat-elevation-z0" class="table-div">
+      <mat-table [dataSource]="dataSource" matSort >
+
+        <ng-container matColumnDef="SB">
+          <mat-header-cell *matHeaderCellDef width ="5%" mat-sort-header >SB</mat-header-cell>
+          <mat-cell *matCellDef="let element" > {{element.SB}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="Date">
+          <mat-header-cell *matHeaderCellDef width ="5%" mat-sort-header >Date</mat-header-cell>
+          <mat-cell *matCellDef="let element" > {{element.Date}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="Winner">
+          <mat-header-cell *matHeaderCellDef width ="30%" mat-sort-header >Winner</mat-header-cell>
+          <mat-cell *matCellDef="let element" > {{element.Winner}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="Loser">
+          <mat-header-cell *matHeaderCellDef width ="30%" mat-sort-header >Loser</mat-header-cell>
+          <mat-cell *matCellDef="let element" > {{element.Loser}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="MVP">
+          <mat-header-cell *matHeaderCellDef width ="30%" mat-sort-header >MVP</mat-header-cell>
+          <mat-cell *matCellDef="let element" > {{element.MVP}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="Winner Pts">
+          <mat-header-cell *matHeaderCellDef width ="5%" mat-sort-header >Winner Pts</mat-header-cell>
+          <mat-cell *matCellDef="let element" > {{element['Winner Pts']}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="Loser Pts">
+          <mat-header-cell *matHeaderCellDef width ="5%" mat-sort-header >Loser Pts</mat-header-cell>
+          <mat-cell *matCellDef="let element" > {{element['Loser Pts']}} </mat-cell>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="displayedColumns" ></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns " ></mat-row>
+
+      </mat-table>
+      <mat-paginator [pageSizeOptions]="[10, 20, 30]" showFirstLastButtons></mat-paginator>
+    </div>
+
+  </div>
+
+</body>
+

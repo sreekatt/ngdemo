@@ -1,0 +1,42 @@
+
+<mat-sidenav-container>
+    <mat-sidenav
+    #drawer
+    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'side' : 'side'"
+    [opened]="(isHandset$ | async) === false"
+    >
+    <mat-toolbar color="primary" >Menu</mat-toolbar>
+    <div style="padding: 0 0px;">
+      <mat-nav-list>
+        <a mat-list-item routerLink="/home" routerLinkActive="active-list-item">Home</a>
+        <a mat-list-item routerLink="/tracking" routerLinkActive="active-list-item">Tracking ISS</a>
+        <a mat-list-item routerLink="/gmaps" routerLinkActive="active-list-item">Google Routes</a>
+        <a mat-list-item routerLink="/superbowl" routerLinkActive="active-list-item">Superbowl Stats</a>
+      </mat-nav-list>
+    </div>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <mat-toolbar color="primary" class="navbar">
+        <button
+          type="button"
+          aria-label="Toggle sidenav"
+          (click)="drawer.toggle()"
+          mat-icon-button>
+          <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+        </button>
+        <div>Angular Demo Site</div>
+        <span class="spacer"></span>
+
+        <!--
+          <a mat-list-item routerLink="/typography">About</a>
+        <a mat-list-item routerLink="/buttons">Contact</a>
+        <mat-icon class="main-tool-bar-icon">settings</mat-icon>
+        -->
+
+      </mat-toolbar>
+      <ng-content></ng-content>
+    </mat-sidenav-content>
+</mat-sidenav-container>
+
+

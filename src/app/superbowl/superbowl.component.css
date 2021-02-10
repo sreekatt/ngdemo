@@ -1,0 +1,26 @@
+body {
+  padding: 30px;
+}
+
+mat-grid-tile {
+  background-color: lightgrey;
+  min-width: 300px;
+}
+
+.dashboard-card {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+#myChart1 {
+  height: 100%;
+}
+
+#myChart2 {
+  height: 100%;
+}
+
+.table-div {
+  margin-bottom: 30px;
+}

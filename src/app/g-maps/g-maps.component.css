@@ -1,0 +1,22 @@
+body {
+  padding: 30px;
+}
+
+.map-container {
+  margin: 0px;
+}
+
+.map-frame {
+  position: relative;
+  border: 2px solid black;
+  height: 420px;
+}
+
+#g-map {
+  height: 100%;
+}
+
+#g-map {
+  background: transparent url(../../assets/images/oval.svg) no-repeat center
+    center;
+}

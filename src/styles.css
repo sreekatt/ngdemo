@@ -1,1 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import "~leaflet/dist/leaflet.css";
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0px;
+  padding: 0px;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+/* Navigation link styles */
+
+.active-list-item {
+  color: rgb(0, 147, 221) !important; /* Note: You could also use a custom theme */
+}
+
+

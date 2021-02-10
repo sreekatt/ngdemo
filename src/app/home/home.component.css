@@ -1,0 +1,17 @@
+body {
+  padding: 50px;
+}
+
+.container {
+  margin: 0px;
+}
+
+.home-page-card {
+  background-color: white;
+  padding: 30px;
+  height: 50vh;
+ }
+
+ span {
+  font-weight: 600;
+ }

@@ -1,0 +1,88 @@
+<body>
+
+  <h2>Material Table with pagination</h2>
+
+  <!--
+    <mat-form-field>
+    <input matInput placeholder="Filter" type="text" (keyup)="applyFilter($event.target.value)">
+  </mat-form-field>
+  -->
+
+  <div class="mat-elevation-z1">
+    <mat-table [dataSource]="dataSource" matSort >
+
+      <ng-container matColumnDef="userId">
+        <mat-header-cell *matHeaderCellDef width ="20%" mat-sort-header >User Id</mat-header-cell>
+        <mat-cell *matCellDef="let element" > {{element.userId}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="id">
+        <mat-header-cell *matHeaderCellDef width ="20%" mat-sort-header >Id</mat-header-cell>
+        <mat-cell *matCellDef="let element" > {{element.id}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="title">
+        <mat-header-cell *matHeaderCellDef width ="40%" mat-sort-header >Title</mat-header-cell>
+        <mat-cell *matCellDef="let element" > {{element.title}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="body">
+        <mat-header-cell *matHeaderCellDef width ="40%" mat-sort-header >Body</mat-header-cell>
+        <mat-cell *matCellDef="let element" > {{element.body}} </mat-cell>
+      </ng-container>
+
+      <mat-header-row *matHeaderRowDef="displayedColumns" ></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns " ></mat-row>
+
+    </mat-table>
+    <mat-paginator [pageSizeOptions]="[10, 20, 30]" showFirstLastButtons></mat-paginator>
+  </div>
+
+  <br>
+
+<!--
+  <h2>All Posts from API -  default html table</h2>
+  <table>
+    <tr>
+      <th>UserID</th>
+      <th>ID</th>
+      <th>title</th>
+      <th>Body</th>
+    </tr>
+    <tr *ngFor="let posts of listOfPosts" >
+      <td>{{ posts.userId }}</td>
+      <td>{{ posts.id }}</td>
+      <td>{{ posts.title }}</td>
+      <td>{{ posts.body }}</td>
+    </tr>
+  </table>
+
+  <br>
+  <h2>List of Comments for a post based on postId from API</h2>
+  <table>
+    <tr>
+      <th>ID</th>
+      <th>PostID</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Body</th>
+    </tr>
+    <tr *ngFor="let com of listOfComments" >
+      <td>{{ com.id }}</td>
+      <td>{{ com.postId }}</td>
+      <td>{{ com.name }}</td>
+      <td>{{ com.email }}</td>
+      <td>{{ com.body }}</td>
+    </tr>
+  </table>
+  <br>
+  <h2>Add a new Post</h2>
+  <div>
+    <p>id: {{objPost?.id}}</p>
+    <p>id: {{objPost?.userId}}</p>
+    <p>id: {{objPost?.title}}</p>
+    <p>id: {{objPost?.body}}</p>
+  </div>
+-->
+</body>
+
