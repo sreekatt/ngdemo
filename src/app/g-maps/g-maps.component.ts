@@ -84,6 +84,8 @@ export class GMapsComponent implements OnInit {
   }
 
   onSourceChange(v) {
+    this.distance = "";
+    this.time = "";
     if (this.dr != null) {
       this.dr.setMap(null);
       this.dr = null;
@@ -99,6 +101,8 @@ export class GMapsComponent implements OnInit {
   }
 
   onDestinationChange(v) {
+    this.distance = "";
+    this.time = "";
     if (this.dr != null) {
       this.dr.setMap(null);
       this.dr = null;
