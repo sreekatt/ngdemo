@@ -15,6 +15,8 @@ export class GMapsComponent implements OnInit {
 
   selectedSource:string;
   selectedDestination:string;
+  public distance:string;
+  public time:string;
 
   options: google.maps.MapOptions = {
     mapTypeId: google.maps.MapTypeId.ROADMAP,
@@ -72,6 +74,9 @@ export class GMapsComponent implements OnInit {
       });
       if (status == google.maps.DirectionsStatus.OK){
         this.dr.setDirections(response);
+        const directionsData = response.routes[0].legs[0];
+        this.distance = directionsData.distance.text;
+        this.time = directionsData.duration.text;
       } else {
         window.alert('Directions request failed due to ' + status);
       }
@@ -129,4 +134,36 @@ export class GMapsComponent implements OnInit {
         map: this.map
       })
     });
+
+// directions service example from google cloud
+
+let directionsService = new google.maps.DirectionsService();
+  let directionsRenderer = new google.maps.DirectionsRenderer();
+  directionsRenderer.setMap(map); // Existing map object displays directions
+  // Create route from existing points used for markers
+  const route = {
+      origin: dakota,
+      destination: frick,
+      travelMode: 'DRIVING'
+  }
+
+  directionsService.route(route,
+    function(response, status) { // anonymous function to capture directions
+      if (status !== 'OK') {
+        window.alert('Directions request failed due to ' + status);
+        return;
+      } else {
+        directionsRenderer.setDirections(response); // Add route to the map
+        var directionsData = response.routes[0].legs[0]; // Get data about the mapped route
+        if (!directionsData) {
+          window.alert('Directions request failed');
+          return;
+        }
+        else {
+          document.getElementById('msg').innerHTML += " Driving distance is " + directionsData.distance.text + " (" + directionsData.duration.text + ").";
+        }
+      }
+    });
+
+
 */
