@@ -12,7 +12,8 @@ export class TrackingComponent implements OnInit, AfterViewInit, OnDestroy{
   public tileUrl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
   // Making a marker with a custom icon
   public issIcon = L.icon({
-    iconUrl: '../../assets/images/iss_200.png',
+    // iconUrl: '../../assets/images/iss_200.png',
+    iconUrl: 'assets/images/iss_200.png',
     iconSize:     [50, 32], // size of the icon
     iconAnchor:   [25, 16], // point of the icon which will correspond to marker's location
   });
