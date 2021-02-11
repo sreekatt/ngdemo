@@ -31,6 +31,7 @@ export class SuperbowlComponent implements OnInit {
   public sbWinners;
   public sbWinnerPts;
   public sbLoserPts;
+  public sbWinYears =[];
 
 /*
 "Date": "Feb 2 2020",
@@ -49,7 +50,6 @@ export class SuperbowlComponent implements OnInit {
     this._freeApiService.getSuperBowlStats()
             .subscribe( data => {
               this.superbowlStats = data;
-              console.log(this.superbowlStats);
               this.dataSource = new MatTableDataSource(this.superbowlStats)
               this.dataSource = new MatTableDataSource(this.superbowlStats);
                           this.dataSource.paginator = this.paginator;
@@ -58,16 +58,15 @@ export class SuperbowlComponent implements OnInit {
                           this.sbWinners = this.superbowlStats.map(item => item.Winner);
                           this.sbWinnerPts = this.superbowlStats.map(item => item['Winner Pts']);
                           this.sbLoserPts = this.superbowlStats.map(item => item['Loser Pts']);
-                          console.log(this.sbDates);
-                          console.log(this.sbWinners);
-                          console.log(this.sbWinnerPts);
-
+                          this.sbWinYears = this.superbowlStats.map(item =>  item.Date+ "-" +item.Winner);
+                          this.sbWinYears = this.sbWinYears.map(item => item.slice(6));
+                          // Chart config
                           this.chart1 = new Chart('myChart1', {
                             type: 'bar',
                             data: {
-                              labels: this.sbWinners,
+                              labels: this.sbWinYears,
                               datasets:[{
-                                label: 'Winning team',
+                                label: 'Winning team points',
                                 data: this.sbWinnerPts,
                                 backgroundColor: 'rgba(75, 192, 192, 0.2)',
                                 borderColor: 'rgba(75, 192, 192, 1)',
