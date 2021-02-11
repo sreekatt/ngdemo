@@ -17,7 +17,7 @@ body {
 }
 
 #g-map {
-  background: transparent url(assets/images/oval.svg) no-repeat center center;
+  background: transparent url(/assets/images/oval.svg) no-repeat center center;
   /*
   background: transparent url(../../assets/images/oval.svg) no-repeat center
     center; */
