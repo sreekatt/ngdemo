@@ -16,7 +16,7 @@ export class FreeapiService {
 
   private _issUrl = 'https://api.wheretheiss.at/v1/satellites/25544';
 
-  private _url3:string = 'http://samples.openweathermap.org/data/2.5/history/city?q=Warren,OH&appid=b6907d289e10d714a6e88b30761fae22'
+  // private _url3:string = 'http://samples.openweathermap.org/data/2.5/history/city?q=Warren,OH&appid=b6907d289e10d714a6e88b30761fae22'
 
   private _url4:string = '../../assets/data/superbowl.json';
 
@@ -52,7 +52,7 @@ export class FreeapiService {
   getCoords():Observable<any>{
     return this._httpClient.get(this._url5)
  }
- 
+
 }
 
 
