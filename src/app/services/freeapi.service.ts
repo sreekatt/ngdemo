@@ -20,7 +20,7 @@ export class FreeapiService {
 
   // private _url4:string = '../../assets/data/superbowl.json';
 
-  private _url4:string = '/assets/data/superbowl.json';
+  private _url4:string = 'assets/data/superbowl.json';
 
   private _url5:string = 'https://ipinfo.io/geo';
 
