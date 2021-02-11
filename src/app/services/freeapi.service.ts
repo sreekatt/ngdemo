@@ -4,7 +4,8 @@ import { throwError as observableThrowError, Observable } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { PostsModel } from '../models/postsModel';
 import { filter, map } from 'rxjs/operators';
-import { SuperBowlStats } from '../../app/models/superbowl'
+import { SuperBowlStats } from '../../app/models/superbowl';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -20,7 +21,7 @@ export class FreeapiService {
 
   // private _url4:string = '../../assets/data/superbowl.json';
 
-  private _url4:string = 'assets/data/superbowl.json';
+  private _url4:string = environment.assetsPrefix+'assets/data/superbowl.json';
 
   private _url5:string = 'https://ipinfo.io/geo';
 

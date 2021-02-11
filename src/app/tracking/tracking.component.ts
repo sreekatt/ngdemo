@@ -1,6 +1,7 @@
 import { AfterViewInit, Component, OnDestroy, OnInit } from '@angular/core';
 import { FreeapiService } from '../services/freeapi.service';
 import * as L from 'leaflet';
+import { environment } from '../../environments/environment';
 
 @Component({
   selector: 'app-tracking',
@@ -13,7 +14,7 @@ export class TrackingComponent implements OnInit, AfterViewInit, OnDestroy{
   // Making a marker with a custom icon
   public issIcon = L.icon({
     // iconUrl: '../../assets/images/iss_200.png',
-    iconUrl: 'assets/images/iss_200.png',
+    iconUrl: environment.assetsPrefix+'assets/images/iss_200.png',
     iconSize:     [50, 32], // size of the icon
     iconAnchor:   [25, 16], // point of the icon which will correspond to marker's location
   });
