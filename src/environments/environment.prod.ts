@@ -1,5 +1,5 @@
 export const environment = {
   production: true,
-  assetsPrefix: "/"
+  assetsPrefix: "ngdemo/"
   // assetsPrefix: "ngdemo/blob/gh-pages/"
 };
