@@ -4,6 +4,7 @@ import {MatPaginator} from '@angular/material/paginator';
 import {MatSort} from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { Chart } from 'node_modules/chart.js';
+import { SuperBowlStats } from '../models/superbowl'
 
 @Component({
   selector: 'app-superbowl',
@@ -12,7 +13,7 @@ import { Chart } from 'node_modules/chart.js';
 })
 export class SuperbowlComponent implements OnInit {
 
-  public superbowlStats = [];
+  public superbowlStats:SuperBowlStats[] = [];
   public dataSource;
   public errorMsg: string;
 

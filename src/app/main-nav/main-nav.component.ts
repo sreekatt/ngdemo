@@ -23,4 +23,11 @@ export class MainNavComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  closeDrawer(drawer) {
+    if ((this.isHandset$)) {
+     // console.log(this.isHandset$);
+     drawer.close();
+    }
+  }
+
 }
