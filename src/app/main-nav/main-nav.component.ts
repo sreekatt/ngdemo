@@ -24,8 +24,11 @@ export class MainNavComponent implements OnInit {
   }
 
   closeDrawer(drawer) {
-    if ((this.isHandset$)) {
-     // console.log(this.isHandset$);
+
+    let isMobile:boolean;
+    this.isHandset$.subscribe(data => isMobile = data );
+    if ((isMobile)) {
+     console.log(isMobile);
      drawer.close();
     }
   }
