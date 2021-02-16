@@ -99,6 +99,10 @@ export class SuperbowlComponent implements OnInit {
 
   }
 
+  ngOnDestroy() {
+    //this._freeApiService.getSuperBowlStats().unsubscribe();
+  }
+
   // var dates = array.map(item => item.date);
 
 }

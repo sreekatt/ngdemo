@@ -24,6 +24,8 @@ export class TrackingComponent implements OnInit, AfterViewInit, OnDestroy{
   public marker;
   public firstTime = true;
   public id;
+  public lat = 0;
+  public lng = 0;
 
   constructor(private _freeApiService: FreeapiService) { }
 
@@ -34,9 +36,9 @@ export class TrackingComponent implements OnInit, AfterViewInit, OnDestroy{
 
   ngAfterViewInit(){
 
-    this.myMap = L.map('iss-map').setView([0, 0], 2);
+    this.myMap = L.map('iss-map').setView([this.lat, this.lng], 1);
     this.tiles = L.tileLayer(this.tileUrl, {attribution: this.attribution}).addTo(this.myMap);
-    this.marker = L.marker([0,0], {icon: this.issIcon}).addTo(this.myMap);
+    this.marker = L.marker([0,0], {icon: this.issIcon}).addTo(this.myMap.setView([this.lat, this.lng]));
 
     this.getIssTracking();
     this.id = setInterval(() => {
@@ -50,6 +52,9 @@ export class TrackingComponent implements OnInit, AfterViewInit, OnDestroy{
       .subscribe(data => {
         const ldata = data;
         const { latitude, longitude } = ldata;
+        this.lat = ldata.latitude;
+        this.lng = ldata.longitude;
+
         this.marker.setLatLng([latitude, longitude]);
         },
         error => this.errorMsg = error);
@@ -58,6 +63,7 @@ export class TrackingComponent implements OnInit, AfterViewInit, OnDestroy{
   ngOnDestroy(){
     if(this.id){
       clearInterval(this.id);
+     // this._freeApiService.getIss().unsubscribe();
     }
   }
 
